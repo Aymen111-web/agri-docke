@@ -1,0 +1,30 @@
+{
+    "name": "AgriGate - B2B Digital Marketplace",
+    "short_name": "AgriGate",
+    "description": "AgriGate - B2B Digital Marketplace for Ethiopian Agriculture connecting farmers with commercial buyers.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#F8F9FA",
+    "theme_color": "#1E9444",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "/icons/icon-512x512.svg",
+            "sizes": "192x192 512x512",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/qmt.webp",
+            "sizes": "192x192",
+            "type": "image/webp",
+            "purpose": "any"
+        }
+    ],
+    "categories": [
+        "business",
+        "shopping",
+        "agriculture"
+    ],
+    "lang": "en-US"
+}

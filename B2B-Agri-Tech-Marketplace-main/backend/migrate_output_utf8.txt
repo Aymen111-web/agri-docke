@@ -1,0 +1,131 @@
+﻿
+ INFO Running migrations. 
+
+ 2026_09_04_000001_drop_payments_order_id_unique  10.90ms FAIL
+
+   Illuminate\Database\QueryException 
+
+  SQLSTATE[HY000]: General error: 1553 Cannot drop index 'payments_order_id_unique': needed in a foreign key constraint (Connection: mysql, Host: 127.0.0.1, Port: 3306, Database: farmer_marketdb, SQL: alter table `payments` drop index `payments_order_id_unique`)
+
+  at vendor\laravel\framework\src\Illuminate\Database\Connection.php:857
+    853Γûò             $exceptionType = ($isUniqueConstraintError = $this->isUniqueConstraintError($e))
+    854Γûò                 ? UniqueConstraintViolationException::class
+    855Γûò                 : QueryException::class;
+    856Γûò 
+  Γ₧£ 857Γûò             $exception = new $exceptionType(
+    858Γûò                 $this->getNameWithReadWriteType(),
+    859Γûò                 $query,
+    860Γûò                 $this->prepareBindings($bindings),
+    861Γûò                 $e,
+
+  1   vendor\laravel\framework\src\Illuminate\Database\Connection.php:601
+      PDOException::("SQLSTATE[HY000]: General error: 1553 Cannot drop index 'payments_order_id_unique': needed in a foreign key constraint")
+
+  2   vendor\laravel\framework\src\Illuminate\Database\Connection.php:601
+      PDOStatement::execute()
+
+  3   vendor\laravel\framework\src\Illuminate\Database\Connection.php:846
+      Illuminate\Database\Connection::Illuminate\Database\{closure}("alter table `payments` drop index `payments_order_id_unique`", [])
+
+  4   vendor\laravel\framework\src\Illuminate\Database\Connection.php:813
+      Illuminate\Database\Connection::runQueryCallback("alter table `payments` drop index `payments_order_id_unique`", [], Object(Closure))
+
+  5   vendor\laravel\framework\src\Illuminate\Database\Connection.php:590
+      Illuminate\Database\Connection::run("alter table `payments` drop index `payments_order_id_unique`", [], Object(Closure))
+
+  6   vendor\laravel\framework\src\Illuminate\Database\Schema\Blueprint.php:122
+      Illuminate\Database\Connection::statement("alter table `payments` drop index `payments_order_id_unique`")
+
+  7   vendor\laravel\framework\src\Illuminate\Database\Schema\Builder.php:708
+      Illuminate\Database\Schema\Blueprint::build()
+
+  8   vendor\laravel\framework\src\Illuminate\Database\Schema\Builder.php:514
+      Illuminate\Database\Schema\Builder::build(Object(Illuminate\Database\Schema\Blueprint))
+
+  9   vendor\laravel\framework\src\Illuminate\Support\Facades\Facade.php:363
+      Illuminate\Database\Schema\Builder::table("payments", Object(Closure))
+
+  10  database\migrations\2026_09_04_000001_drop_payments_order_id_unique.php:15
+      Illuminate\Support\Facades\Facade::__callStatic("table")
+
+  11  vendor\laravel\framework\src\Illuminate\Database\Migrations\Migrator.php:517
+      Illuminate\Database\Migrations\Migration@anonymous\C:\Users\hp\Desktop\Qelem_Real\B2B-Agri-Tech-Marketplace\backend\database\migrations\2026_09_04_000001_drop_payments_order_id_unique.php:7$10b::up()
+
+  12  vendor\laravel\framework\src\Illuminate\Database\Migrations\Migrator.php:442
+      Illuminate\Database\Migrations\Migrator::runMethod(Object(Illuminate\Database\MySqlConnection), Object(Illuminate\Database\Migrations\Migration@anonymous\C:\Users\hp\Desktop\Qelem_Real\B2B-Agri-Tech-Marketplace\backend\database\migrations\2026_09_04_000001_drop_payments_order_id_unique.php:7$10b), "up")
+
+  13  vendor\laravel\framework\src\Illuminate\Database\Migrations\Migrator.php:451
+      Illuminate\Database\Migrations\Migrator::Illuminate\Database\Migrations\{closure}()
+
+  14  vendor\laravel\framework\src\Illuminate\Database\Migrations\Migrator.php:253
+      Illuminate\Database\Migrations\Migrator::runMigration(Object(Illuminate\Database\Migrations\Migration@anonymous\C:\Users\hp\Desktop\Qelem_Real\B2B-Agri-Tech-Marketplace\backend\database\migrations\2026_09_04_000001_drop_payments_order_id_unique.php:7$10b), "up", "2026_09_04_000001_drop_payments_order_id_unique")
+
+  15  vendor\laravel\framework\src\Illuminate\Console\View\Components\Task.php:43
+      Illuminate\Database\Migrations\Migrator::Illuminate\Database\Migrations\{closure}()
+
+  16  vendor\laravel\framework\src\Illuminate\Database\Migrations\Migrator.php:853
+      Illuminate\Console\View\Components\Task::render("2026_09_04_000001_drop_payments_order_id_unique", Object(Closure))
+
+  17  vendor\laravel\framework\src\Illuminate\Database\Migrations\Migrator.php:253
+      Illuminate\Database\Migrations\Migrator::write("Illuminate\Console\View\Components\Task", "2026_09_04_000001_drop_payments_order_id_unique", Object(Closure))
+
+  18  vendor\laravel\framework\src\Illuminate\Database\Migrations\Migrator.php:211
+      Illuminate\Database\Migrations\Migrator::runUp("C:\Users\hp\Desktop\Qelem_Real\B2B-Agri-Tech-Marketplace\backend\database\migrations/2026_09_04_000001_drop_payments_order_id_unique.php")
+
+  19  vendor\laravel\framework\src\Illuminate\Database\Migrations\Migrator.php:138
+      Illuminate\Database\Migrations\Migrator::runPending([])
+
+  20  vendor\laravel\framework\src\Illuminate\Database\Console\Migrations\MigrateCommand.php:118
+      Illuminate\Database\Migrations\Migrator::run([])
+
+  21  vendor\laravel\framework\src\Illuminate\Database\Migrations\Migrator.php:672
+      Illuminate\Database\Console\Migrations\MigrateCommand::Illuminate\Database\Console\Migrations\{closure}()
+
+  22  vendor\laravel\framework\src\Illuminate\Database\Console\Migrations\MigrateCommand.php:111
+      Illuminate\Database\Migrations\Migrator::usingConnection(Object(Closure))
+
+  23  vendor\laravel\framework\src\Illuminate\Database\Console\Migrations\MigrateCommand.php:90
+      Illuminate\Database\Console\Migrations\MigrateCommand::runMigrations()
+
+  24  vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php:36
+      Illuminate\Database\Console\Migrations\MigrateCommand::handle()
+
+  25  vendor\laravel\framework\src\Illuminate\Container\Util.php:43
+      Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+
+  26  vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php:96
+      Illuminate\Container\Util::unwrapIfClosure(Object(Closure))
+
+  27  vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php:35
+      Illuminate\Container\BoundMethod::callBoundMethod(Object(Illuminate\Foundation\Application), Object(Closure))
+
+  28  vendor\laravel\framework\src\Illuminate\Container\Container.php:799
+      Illuminate\Container\BoundMethod::call(Object(Illuminate\Foundation\Application), [])
+
+  29  vendor\laravel\framework\src\Illuminate\Console\Command.php:280
+      Illuminate\Container\Container::call()
+
+  30  vendor\symfony\console\Command\Command.php:341
+      Illuminate\Console\Command::execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Laravel\Pao\Laravel\PaoOutputStyle))
+
+  31  vendor\laravel\framework\src\Illuminate\Console\Command.php:249
+      Symfony\Component\Console\Command\Command::run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Laravel\Pao\Laravel\PaoOutputStyle))
+
+  32  vendor\symfony\console\Application.php:1117
+      Illuminate\Console\Command::run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+
+  33  vendor\symfony\console\Application.php:356
+      Symfony\Component\Console\Application::doRunCommand(Object(Illuminate\Database\Console\Migrations\MigrateCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+
+  34  vendor\symfony\console\Application.php:195
+      Symfony\Component\Console\Application::doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+
+  35  vendor\laravel\framework\src\Illuminate\Foundation\Console\Kernel.php:198
+      Symfony\Component\Console\Application::run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+
+  36  vendor\laravel\framework\src\Illuminate\Foundation\Application.php:1235
+      Illuminate\Foundation\Console\Kernel::handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+
+  37  artisan:16
+      Illuminate\Foundation\Application::handleCommand(Object(Symfony\Component\Console\Input\ArgvInput))
+

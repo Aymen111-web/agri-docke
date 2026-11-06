@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGradHoney" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#b45309"/>
+      <stop offset="100%" stop-color="#451a03"/>
+    </linearGradient>
+    <linearGradient id="jarGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="50%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" rx="16" fill="url(#bgGradHoney)"/>
+  <rect x="130" y="80" width="140" height="150" rx="20" fill="url(#jarGrad)" opacity="0.95"/>
+  <rect x="120" y="65" width="160" height="25" rx="8" fill="#78350f"/>
+  <polygon points="200,100 235,120 235,160 200,180 165,160 165,120" fill="#fef3c7" opacity="0.8"/>
+  <text x="200" y="270" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-weight="bold" font-size="18" letter-spacing="1">ORGANIC HONEY &amp; SPICES</text>
+</svg>

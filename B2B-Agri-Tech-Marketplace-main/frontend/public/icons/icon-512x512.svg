@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" rx="100" fill="#ffffff"/>
+  <!-- Scaled up and centered paths from QelemMedaLogo (scale ~2x, offset slightly) -->
+  <g transform="scale(2) translate(28, 28)">
+    <path d="M 40 160 A 84 84 0 1 1 182 85" stroke="#0B57D0" stroke-width="14" stroke-linecap="round" fill="none" />
+    <path d="M 175 105 A 72 72 0 1 0 52 162" stroke="#E69500" stroke-width="14" stroke-linecap="round" fill="none" />
+    <path d="M 125 130 C 135 142 165 178 190 184 C 172 192 148 186 132 168 Z" fill="#E69500" />
+    <path d="M 64 140 V 70 L 100 115 L 136 70 V 140" stroke="#0B57D0" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    <path d="M 80 144 L 100 128 L 120 144" stroke="#E69500" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+  </g>
+</svg>

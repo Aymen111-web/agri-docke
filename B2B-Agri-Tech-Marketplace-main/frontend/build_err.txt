@@ -1,0 +1,187 @@
+﻿
+> frontend-vue@0.0.0 build
+> vite build
+
+node.exe : [33m(!) 
+Your Vite config uses 
+features that are 
+unsupported by 
+`configLoader: 
+'native'`, which is 
+planned to become the 
+default in a future 
+major version of Vite:
+At line:1 char:1
++ & "C:\laragon\bin\nod
+ejs\node-v22/node.exe" 
+"C:\laragon\bin\nodejs\
+no ...
++ ~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+~~
+    + CategoryInfo     
+         : NotSpecifi  
+  ed: ([33m(!) Your   
+  V...ersion of Vit    
+e::String) [], Rem    
+oteException
+    + FullyQualifiedEr 
+   rorId : NativeComm  
+  andError
+ 
+  - `__dirname` (vite.c
+onfig.js:10:25). Use 
+`import.meta.dirname` 
+instead
+Set `VITE_CONFIG_NATIVE
+_IGNORE_WARNING=true` 
+to suppress this 
+warning.[39m
+[36mvite v8.2.2 [32mbuilding client environment for production...[36m[39m
+transforming...
+Γ£ô 1815 modules transformed.
+[31mΓ£ù[39m Build 
+failed in 1.09s
+[31merror during 
+build:
+[31mBuild failed with 
+1 error:
+
+[plugin @tailwindcss/vi
+te:generate:build] C:/U
+sers/hp/Desktop/Qelem_R
+eal/B2B-Agri-Tech-Marke
+tplace/frontend/src/pag
+es/LandingPage.vue?vue&
+type=style&index=0&scop
+ed=eb90b5f2&lang.css
+Error: Cannot apply 
+unknown utility class 
+`bg-white/60`. Are you 
+using CSS modules or 
+similar and missing 
+`@reference`? https://t
+ailwindcss.com/docs/fun
+ctions-and-directives#r
+eference-directive
+    at 
+onInvalidCandidate (fil
+e:///C:/Users/hp/Deskto
+p/Qelem_Real/B2B-Agri-T
+ech-Marketplace/fronten
+d/node_modules/tailwind
+css/dist/lib.mjs:21:168
+2)
+    at $e (file:///C:/U
+sers/hp/Desktop/Qelem_R
+eal/B2B-Agri-Tech-Marke
+tplace/frontend/node_mo
+dules/tailwindcss/dist/
+lib.mjs:16:39796)
+    at file:///C:/Users
+/hp/Desktop/Qelem_Real/
+B2B-Agri-Tech-Marketpla
+ce/frontend/node_module
+s/tailwindcss/dist/lib.
+mjs:21:711
+    at Hr (file:///C:/U
+sers/hp/Desktop/Qelem_R
+eal/B2B-Agri-Tech-Marke
+tplace/frontend/node_mo
+dules/tailwindcss/dist/
+lib.mjs:5:1775)
+    at P (file:///C:/Us
+ers/hp/Desktop/Qelem_Re
+al/B2B-Agri-Tech-Market
+place/frontend/node_mod
+ules/tailwindcss/dist/l
+ib.mjs:5:1377)
+    at Ve (file:///C:/U
+sers/hp/Desktop/Qelem_R
+eal/B2B-Agri-Tech-Marke
+tplace/frontend/node_mo
+dules/tailwindcss/dist/
+lib.mjs:21:172)
+    at pn (file:///C:/U
+sers/hp/Desktop/Qelem_R
+eal/B2B-Agri-Tech-Marke
+tplace/frontend/node_mo
+dules/tailwindcss/dist/
+lib.mjs:38:294)
+    at async Ea (file:/
+//C:/Users/hp/Desktop/Q
+elem_Real/B2B-Agri-Tech
+-Marketplace/frontend/n
+ode_modules/tailwindcss
+/dist/lib.mjs:38:631)
+    at async zf (file:/
+//C:/Users/hp/Desktop/Q
+elem_Real/B2B-Agri-Tech
+-Marketplace/frontend/n
+ode_modules/tailwindcss
+/dist/lib.mjs:38:1406)
+    at async fu (file:/
+//C:/Users/hp/Desktop/Q
+elem_Real/B2B-Agri-Tech
+-Marketplace/frontend/n
+ode_modules/@tailwindcs
+s/node/dist/index.mjs:1
+0:3458)[31m
+    at aggregateBinding
+ErrorsIntoJsError (file
+:///C:/Users/hp/Desktop
+/Qelem_Real/B2B-Agri-Te
+ch-Marketplace/frontend
+/node_modules/rolldown/
+dist/shared/error-BP8lJ
+Hle.mjs:48:18)
+    at 
+unwrapBindingResult (fi
+le:///C:/Users/hp/Deskt
+op/Qelem_Real/B2B-Agri-
+Tech-Marketplace/fronte
+nd/node_modules/rolldow
+n/dist/shared/error-BP8
+lJHle.mjs:18:128)
+    at #build (file:///
+C:/Users/hp/Desktop/Qel
+em_Real/B2B-Agri-Tech-M
+arketplace/frontend/nod
+e_modules/rolldown/dist
+/shared/rolldown-DfXO5K
+1m.mjs:133:34)
+    at async 
+buildEnvironment (file:
+///C:/Users/hp/Desktop/
+Qelem_Real/B2B-Agri-Tec
+h-Marketplace/frontend/
+node_modules/vite/dist/
+node/chunks/node.js:338
+21:66)
+    at async 
+Object.build (file:///C
+:/Users/hp/Desktop/Qele
+m_Real/B2B-Agri-Tech-Ma
+rketplace/frontend/node
+_modules/vite/dist/node
+/chunks/node.js:34242:1
+9)
+    at async 
+Object.buildApp (file:/
+//C:/Users/hp/Desktop/Q
+elem_Real/B2B-Agri-Tech
+-Marketplace/frontend/n
+ode_modules/vite/dist/n
+ode/chunks/node.js:3423
+9:153)
+    at async 
+CAC.<anonymous> (file:/
+//C:/Users/hp/Desktop/Q
+elem_Real/B2B-Agri-Tech
+-Marketplace/frontend/n
+ode_modules/vite/dist/n
+ode/cli.js:776:3) {
+  errors: 
+[Getter/Setter]
+}[39m

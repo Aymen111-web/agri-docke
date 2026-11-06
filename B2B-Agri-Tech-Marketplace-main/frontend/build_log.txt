@@ -1,0 +1,39 @@
+[33m(!) Your Vite config uses features that are unsupported by `configLoader: 'native'`, which is planned to become the default in a future major version of Vite:
+  - `__dirname` (vite.config.js:10:25). Use `import.meta.dirname` instead
+Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.[39m
+[36mvite v8.2.2 [32mbuilding client environment for production...[36m[39m
+transforming...
+✓ 1811 modules transformed.
+[31m✗[39m Build failed in 2.32s
+[31merror during build:
+[31mBuild failed with 1 error:
+
+[plugin vite:vue] C:/Users/hp/Desktop/Qelem_Real/B2B-Agri-Tech-Marketplace/frontend/src/pages/admin/ApplicationReview.vue:187:19
+SyntaxError: [vue/compiler-sfc] Unexpected reserved word 'await'. (187:19)
+
+C:/Users/hp/Desktop/Qelem_Real/B2B-Agri-Tech-Marketplace/frontend/src/pages/admin/ApplicationReview.vue
+596|    } else if (url.startsWith('http://') || url.startsWith('https://')) {
+597|      try {
+598|        const resp = await fetch(url)
+   |                     ^
+599|        if (!resp.ok) throw new Error(`HTTP error ${resp.status}`)
+600|        const rawBlob = await resp.blob()
+    at constructor (C:\Users\hp\Desktop\Qelem_Real\B2B-Agri-Tech-Marketplace\frontend\node_modules\@babel\parser\lib\index.js:369:19)
+    at Parser.raise (C:\Users\hp\Desktop\Qelem_Real\B2B-Agri-Tech-Marketplace\frontend\node_modules\@babel\parser\lib\index.js:6620:19)
+    at Parser.checkReservedWord (C:\Users\hp\Desktop\Qelem_Real\B2B-Agri-Tech-Marketplace\frontend\node_modules\@babel\parser\lib\index.js:12260:12)
+    at Parser.parseIdentifierName (C:\Users\hp\Desktop\Qelem_Real\B2B-Agri-Tech-Marketplace\frontend\node_modules\@babel\parser\lib\index.js:12240:12)
+    at Parser.parseIdentifier (C:\Users\hp\Desktop\Qelem_Real\B2B-Agri-Tech-Marketplace\frontend\node_modules\@babel\parser\lib\index.js:12210:23)
+    at Parser.parseExprAtom (C:\Users\hp\Desktop\Qelem_Real\B2B-Agri-Tech-Marketplace\frontend\node_modules\@babel\parser\lib\index.js:11442:27)
+    at Parser.parseExprSubscripts (C:\Users\hp\Desktop\Qelem_Real\B2B-Agri-Tech-Marketplace\frontend\node_modules\@babel\parser\lib\index.js:11102:23)
+    at Parser.parseUpdate (C:\Users\hp\Desktop\Qelem_Real\B2B-Agri-Tech-Marketplace\frontend\node_modules\@babel\parser\lib\index.js:11087:21)
+    at Parser.parseMaybeUnary (C:\Users\hp\Desktop\Qelem_Real\B2B-Agri-Tech-Marketplace\frontend\node_modules\@babel\parser\lib\index.js:11067:23)
+    at Parser.parseMaybeUnaryOrPrivate (C:\Users\hp\Desktop\Qelem_Real\B2B-Agri-Tech-Marketplace\frontend\node_modules\@babel\parser\lib\index.js:10920:61)[31m
+    at aggregateBindingErrorsIntoJsError (file:///C:/Users/hp/Desktop/Qelem_Real/B2B-Agri-Tech-Marketplace/frontend/node_modules/rolldown/dist/shared/error-BP8lJHle.mjs:48:18)
+    at unwrapBindingResult (file:///C:/Users/hp/Desktop/Qelem_Real/B2B-Agri-Tech-Marketplace/frontend/node_modules/rolldown/dist/shared/error-BP8lJHle.mjs:18:128)
+    at #build (file:///C:/Users/hp/Desktop/Qelem_Real/B2B-Agri-Tech-Marketplace/frontend/node_modules/rolldown/dist/shared/rolldown-DfXO5K1m.mjs:133:34)
+    at async buildEnvironment (file:///C:/Users/hp/Desktop/Qelem_Real/B2B-Agri-Tech-Marketplace/frontend/node_modules/vite/dist/node/chunks/node.js:33821:66)
+    at async Object.build (file:///C:/Users/hp/Desktop/Qelem_Real/B2B-Agri-Tech-Marketplace/frontend/node_modules/vite/dist/node/chunks/node.js:34242:19)
+    at async Object.buildApp (file:///C:/Users/hp/Desktop/Qelem_Real/B2B-Agri-Tech-Marketplace/frontend/node_modules/vite/dist/node/chunks/node.js:34239:153)
+    at async CAC.<anonymous> (file:///C:/Users/hp/Desktop/Qelem_Real/B2B-Agri-Tech-Marketplace/frontend/node_modules/vite/dist/node/cli.js:776:3) {
+  errors: [Getter/Setter]
+}[39m
