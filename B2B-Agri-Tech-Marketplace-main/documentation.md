@@ -404,3 +404,205 @@ Validating the PIN is the primary mechanism to transition an order from "paid_in
 Keep Authentication and Capability concepts separate.
 Admin can activate or deactivate accounts for policy violations.
 Inactive users cannot perform protected marketplace operations.
+
+
+======================docker=======================================
+# TASK: Containerize the Existing B2B Agri-Tech Marketplace Using Docker
+
+Act as a senior DevOps engineer and Docker specialist with strong experience in Laravel 13, Vue 3, MySQL, Docker, and Docker Compose.
+
+I have an existing full-stack application called **B2B Agri-Tech Marketplace**, with the following structure:
+
+- `backend/` — Laravel 13 REST API
+- `frontend/` — Vue 3 frontend
+- Database — MySQL
+
+My goal is to containerize the entire existing application so that I can run it locally using Docker Desktop on Windows 11 with WSL 2 and Ubuntu, and later deploy it to a production hosting environment.
+
+## 1. First: Inspect the Existing Project
+
+Before making any changes:
+
+- Inspect the complete backend and frontend directory structures.
+- Examine Laravel dependencies, PHP requirements, extensions, configuration, API routes, and entry points.
+- Examine Vue dependencies, package.json, Vite configuration, and build process.
+- Identify the current database configuration and required environment variables.
+- Check whether the project already contains Dockerfiles or Docker Compose configurations.
+- Identify any existing storage, cache, file upload, and public asset requirements.
+
+Do not assume the application uses a standard configuration. Base all implementation decisions on the actual project files.
+
+## 2. Backend Containerization (Laravel 13)
+
+Create a production-appropriate Dockerfile for the Laravel backend.
+
+Requirements:
+
+- Use a suitable official PHP base image compatible with the existing Laravel and PHP requirements.
+- Install all required PHP extensions, including PDO MySQL and other extensions discovered during inspection.
+- Install Composer dependencies correctly.
+- Configure PHP-FPM or another appropriate application server.
+- Configure Laravel storage and bootstrap cache permissions.
+- Support Laravel migrations and cache commands.
+- Handle Laravel application key and environment configuration through environment variables.
+- Ensure uploaded files and Laravel storage data are handled correctly.
+- Do not include secrets or `.env` files in Docker images.
+
+Choose an appropriate production architecture. Do not expose PHP-FPM directly to the public internet.
+
+## 3. Frontend Containerization (Vue 3)
+
+Create a Dockerfile for the Vue frontend.
+
+Requirements:
+
+- Use a multi-stage Docker build where appropriate.
+- Install dependencies using the existing lockfile.
+- Build the Vue production application.
+- Serve the compiled application using Nginx or another appropriate production web server.
+- Configure SPA history fallback so Vue Router routes work after refreshing a page.
+- Configure frontend-to-backend API communication correctly.
+- Do not hardcode localhost as the production API URL.
+- Handle environment-specific API configuration appropriately.
+
+## 4. MySQL Database
+
+Configure MySQL as a Docker Compose service.
+
+Requirements:
+
+- Use an official stable MySQL image compatible with the existing application.
+- Create the database using environment variables.
+- Configure database username and password securely.
+- Persist database data using a named Docker volume.
+- Add a health check.
+- Ensure Laravel waits for the database to become healthy before database-dependent startup operations.
+- Do not expose MySQL publicly in production.
+
+Use the existing database name and schema expectations discovered during inspection.
+
+## 5. Docker Compose
+
+Create a root-level `compose.yaml` or `docker-compose.yml` that manages:
+
+- Laravel backend
+- Vue frontend
+- MySQL database
+- Any required web server or reverse proxy
+
+Requirements:
+
+- Use Docker networks appropriately.
+- Use persistent volumes where needed.
+- Configure service dependencies and health checks.
+- Use environment variables instead of hardcoded credentials.
+- Provide suitable restart policies.
+- Avoid unnecessary containers and services.
+- Make the complete application manageable with Docker Compose.
+
+## 6. Nginx and API Routing
+
+If needed, configure Nginx as the reverse proxy.
+
+The architecture should support:
+
+- Vue frontend access.
+- Laravel API access under an appropriate `/api` path or API subdomain.
+- Correct Laravel public directory configuration.
+- Correct handling of static assets.
+- Correct SPA fallback.
+- Appropriate request size limits for file uploads.
+
+Ensure frontend API requests reach Laravel correctly without CORS or routing problems.
+
+## 7. Environment Configuration and Security
+
+Create appropriate example environment files, such as:
+
+- `.env.docker.example`
+- Backend environment example
+- Frontend environment example, if required
+
+Requirements:
+
+- Never commit real passwords, API keys, Chapa credentials, or application secrets.
+- Add appropriate Docker-related entries to `.dockerignore`.
+- Ensure `.env` files are excluded from Docker build contexts where appropriate.
+- Use secure production defaults.
+- Explain which variables must be configured before running the containers.
+
+Preserve the application's existing authentication and payment integrations.
+
+## 8. Developer Commands and Documentation
+
+Provide clear instructions in a new or updated Docker documentation file.
+
+Include commands for:
+
+- Building images.
+- Starting all services.
+- Stopping services.
+- Viewing logs.
+- Accessing the Laravel container.
+- Running Artisan commands.
+- Running Composer commands.
+- Running database migrations.
+- Running database seeders when appropriate.
+- Rebuilding containers.
+- Removing containers without deleting persistent database data.
+- Backing up and restoring MySQL data.
+
+## 9. Testing and Verification
+
+After implementation:
+
+- Build all Docker images.
+- Start the application using Docker Compose.
+- Verify all containers start successfully.
+- Verify MySQL health.
+- Verify Laravel can connect to MySQL.
+- Verify the Laravel API responds correctly.
+- Verify Vue loads correctly.
+- Verify frontend API communication.
+- Check Laravel logs and container logs.
+- Identify and fix configuration errors caused by the Docker implementation.
+
+Do not claim success if any of these tests have not actually passed.
+
+## 10. Strict Rules
+
+IMPORTANT:
+
+1. Do not rewrite the existing application.
+2. Do not modify unrelated frontend or backend source files.
+3. Do not change API routes, business logic, database schema, authentication, payment logic, or existing UI functionality just to make Docker work.
+4. Do not delete existing files.
+5. Do not replace existing configuration without first understanding its purpose.
+6. Keep changes focused on containerization.
+7. If an existing configuration needs modification, explain why before changing it.
+8. If any requirement is unclear, inspect the project and ask before making risky changes.
+9. Prefer production-ready and maintainable configurations.
+10. Use official Docker images wherever possible.
+
+## Expected Final Deliverables
+
+At the end, provide:
+
+1. Backend Dockerfile.
+2. Frontend Dockerfile.
+3. Docker Compose configuration.
+4. Nginx configuration if needed.
+5. Docker-related environment examples.
+6. `.dockerignore` files.
+7. Docker setup documentation.
+8. A list of all files created or modified.
+9. A summary of tests performed and their results.
+10. Exact commands to run the application locally.
+
+**Final objective:** I should be able to start my existing B2B Agri-Tech Marketplace using a simple command:
+
+`docker compose up -d --build`
+
+And access the frontend and backend through the configured local URLs, with MySQL data persisted across container restarts.
+
+Start by inspecting the project. Do not immediately generate files before understanding the existing architecture.

@@ -1,0 +1,14 @@
+node_modules/
+dist/
+dist-ssr/
+.env
+.env.*
+!.env.example
+!.env.docker.example
+.git
+.vscode
+.idea
+*.log
+build_err.txt
+build_log.txt
+

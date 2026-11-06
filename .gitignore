@@ -1,0 +1,20 @@
+# Environment files
+.env
+.env.*
+!.env.example
+!.env.docker.example
+*.env
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE & Editor Files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Temporary & Log files
+*.log

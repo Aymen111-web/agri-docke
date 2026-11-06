@@ -1,0 +1,3 @@
+include:
+  - path: ./B2B-Agri-Tech-Marketplace-main/compose.yaml
+
